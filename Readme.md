@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов»
 
 * Студент: [Иван Сычев](https://up.htmlacademy.ru/univer-nodejs-api/3/user/1850881).
-* Наставник: `Неизвестно`.
+* Наставник: [Олег Глущенко](https://htmlacademy.ru/profile/id305355).
 
 ---
 
