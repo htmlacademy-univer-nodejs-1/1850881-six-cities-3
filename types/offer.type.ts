@@ -1,8 +1,8 @@
-import {Housing} from './housing.type.js';
 import {Convenience} from './convenience.type.js';
 import {User} from './user.type.js';
 import {City} from './city.type.js';
 import {Coordinate} from './coordinate.type.js';
+import {Housing} from './housing.type.js';
 
 export type Offer = {
   name: string;
