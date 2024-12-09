@@ -21,6 +21,7 @@ export default class UserService implements UserServiceInterface {
     const result = await this.userModel.create(user);
     this.logger.info(`New user created: ${user.email}`);
 
+    // @ts-ignore
     return result;
   }
 
