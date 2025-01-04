@@ -13,9 +13,9 @@ import {CommentRdo} from '../rdo/comment.rdo.js';
 import CreateCommentDto from '../dto/create-comment.dto.js';
 import {DtoValidationMiddleware} from '../../../middlewares/dto-validation-middleware.js';
 import {PrivateRouteMiddleware} from '../../../middlewares/private-root-middleware.js';
-import {UnknownRecord} from '../../../../types/unknown-record.type.js';
 import {ConfigInterface} from '../../../config/config.interface.js';
 import {RestSchema} from '../../../config/rest.schema.js';
+import {UnknownRecord} from '../../../../types/unknown-record.type.js';
 
 @injectable()
 export default class CommentController extends BaseController {
@@ -40,8 +40,6 @@ export default class CommentController extends BaseController {
     {body, user}: Request<UnknownRecord, UnknownRecord, CreateCommentDto>,
     res: Response
   ): Promise<void> {
-
-
     if (!await this.offerService.exists(body.offerId)) {
       throw new HttpError(
         StatusCodes.NOT_FOUND,
