@@ -1,10 +1,10 @@
 export type MockData = {
   name: string[];
   description: string[];
-  previewImg: string[];
+  previewImage: string[];
   images: string[];
   conveniences: string[];
-  countComments: string[];
+  commentsCount: string[];
   author: string[];
   coordinates: string[];
 }
