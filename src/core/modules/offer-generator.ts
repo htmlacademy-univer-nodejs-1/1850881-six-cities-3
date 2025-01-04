@@ -2,8 +2,8 @@ import {generateRandomValue, getRandomItem, getRandomItems} from '../helpers/ran
 import dayjs from 'dayjs';
 import {OfferGeneratorInterface} from './offer-generator.interface.js';
 import {MockData} from '../../types/mock-data.type.js';
-import {City} from '../../types/city.enum';
-import {Housing} from '../../types/housing.enum';
+import {City} from '../../types/city.enum.js';
+import {Housing} from '../../types/housing.enum.js';
 import {FIRST_WEEK_DAY, LAST_WEEK_DAY, MAX_COST, MIN_COST} from '../helpers/constants.js';
 
 export default class OfferGenerator implements OfferGeneratorInterface {

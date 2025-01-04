@@ -1,12 +1,12 @@
 import {NextFunction, Request, Response} from 'express';
-import {Middleware} from './middleware.interface.js';
+import {MiddlewareInterface} from './middleware.interface.js';
 import {HttpError} from '../errors/http-error.js';
 import {StatusCodes} from 'http-status-codes';
-import {DocumentExist} from '../../types/document-exist.interface.js';
+import {DocumentExistInterface} from '../../types/document-exist.interface.js';
 
-export class DocumentExistMiddleware implements Middleware {
+export class DocumentExistMiddleware implements MiddlewareInterface {
   constructor(
-    private readonly service: DocumentExist,
+    private readonly service: DocumentExistInterface,
     private readonly entityName: string,
     private readonly paramName: string,
   ) {

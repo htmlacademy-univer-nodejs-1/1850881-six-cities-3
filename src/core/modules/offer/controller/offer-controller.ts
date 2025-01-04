@@ -17,7 +17,7 @@ import {DtoValidationMiddleware} from '../../../middlewares/dto-validation-middl
 import {DocumentExistMiddleware} from '../../../middlewares/document-exist-middleware.js';
 import {PrivateRouteMiddleware} from '../../../middlewares/private-root-middleware.js';
 import {UnknownRecord} from '../../../../types/unknown-record.type.js';
-import {Config} from '../../../config/config.interface.js';
+import {ConfigInterface} from '../../../config/config.interface.js';
 import {RestSchema} from '../../../config/rest.schema.js';
 import {UserServiceInterface} from '../../user/user-service.interface.js';
 import {FavoriteOfferDto} from '../dto/favorite-offer.dto.js';
@@ -30,7 +30,7 @@ export default class OfferController extends BaseController {
     @inject(AppComponent.OfferServiceInterface) private readonly offersService: OfferServiceInterface,
     @inject(AppComponent.UserServiceInterface) private readonly userService: UserServiceInterface,
     @inject(AppComponent.CommentServiceInterface) private readonly commentService: CommentService,
-    @inject(AppComponent.ConfigInterface) configService: Config<RestSchema>,
+    @inject(AppComponent.ConfigInterface) configService: ConfigInterface<RestSchema>,
   ) {
     super(logger, configService);
 

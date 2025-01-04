@@ -68,7 +68,7 @@ npm start
 
 ### Запуск JSON-server
 ```bash
-run mock:server
+npm run mock:server
 ```
 При запуске можно получить ссылку на API
 

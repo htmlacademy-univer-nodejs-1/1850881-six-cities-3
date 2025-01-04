@@ -1,10 +1,10 @@
 import {StatusCodes} from 'http-status-codes';
 import {NextFunction, Request, Response} from 'express';
-import {Middleware} from './middleware.interface.js';
+import {MiddlewareInterface} from './middleware.interface.js';
 import {HttpError} from '../errors/http-error.js';
 
 
-export class PrivateRouteMiddleware implements Middleware {
+export class PrivateRouteMiddleware implements MiddlewareInterface {
   public async execute({user}: Request, _response: Response, next: NextFunction): Promise<void> {
     if (!user) {
       throw new HttpError(

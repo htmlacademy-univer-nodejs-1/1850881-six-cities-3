@@ -1,23 +1,23 @@
 import {injectable} from 'inversify';
 import asyncHandler from 'express-async-handler';
 import {Response, Router} from 'express';
-import {Route} from '../../types/route.interface.js';
+import {RouteInterface} from '../../types/route.interface.js';
 import {StatusCodes} from 'http-status-codes';
-import {Controller} from './controller.interface.js';
+import {ControllerInterface} from './controller.interface.js';
 import {LoggerInterface} from '../logger/logger.interface.js';
 import {RestSchema} from '../config/rest.schema.js';
-import {Config} from '../config/config.interface.js';
+import {ConfigInterface} from '../config/config.interface.js';
 import {getFullServerPath, transformObject} from '../helpers/common.js';
 import {UnknownRecord} from '../../types/unknown-record.type.js';
 import {STATIC_RESOURCE_FIELDS} from '../helpers/constants.js';
 
 @injectable()
-export abstract class BaseController implements Controller {
+export abstract class BaseController implements ControllerInterface {
   private readonly _router: Router;
 
   constructor(
     protected readonly logger: LoggerInterface,
-    protected readonly configService: Config<RestSchema>,
+    protected readonly configService: ConfigInterface<RestSchema>,
   ) {
     this._router = Router();
   }
@@ -26,7 +26,7 @@ export abstract class BaseController implements Controller {
     return this._router;
   }
 
-  public addRoute(this: BaseController, route: Route) {
+  public addRoute(this: BaseController, route: RouteInterface) {
     const routeHandler = asyncHandler(route.handler.bind(this));
     const middlewares = route.middlewares?.map(
       (middleware) => asyncHandler(middleware.execute.bind(middleware))
