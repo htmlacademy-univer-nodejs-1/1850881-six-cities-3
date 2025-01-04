@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import TsvFileReader from '../file-reader/tsv-file-reader.js';
 import {createOffer} from '../helpers/offers.js';
-import {CliCommand} from './cli-command.interface.js';
+import {CliCommandInterface} from './cli-command.interface.js';
 import {UserServiceInterface} from '../modules/user/user-service.interface.js';
 import {OfferServiceInterface} from '../modules/offer/offer-service.interface.js';
 import {DbClientInterface} from '../db-client/db-client.interface.js';
@@ -16,7 +16,7 @@ import {Offer} from '../../types/offer.type.js';
 import {getMongoURI} from '../helpers/db.js';
 import {DEFAULT_USER_PASSWORD, DEFAULT_DB_PORT} from '../helpers/constants.js';
 
-export default class ImportCommand implements CliCommand {
+export default class ImportCommand implements CliCommandInterface {
   public readonly name = '--import';
   private userService!: UserServiceInterface;
   private offerService!: OfferServiceInterface;

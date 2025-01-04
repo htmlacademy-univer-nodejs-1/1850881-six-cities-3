@@ -1,9 +1,9 @@
 import OfferGenerator from '../modules/offer-generator.js';
 import TsvFileWriter from '../file-writer/tsv-file-writer.js';
-import {CliCommand} from './cli-command.interface.js';
+import {CliCommandInterface} from './cli-command.interface.js';
 import {MockData} from '../../types/mock-data.type.js';
 
-export default class GenerateCommand implements CliCommand {
+export default class GenerateCommand implements CliCommandInterface {
   public readonly name = '--generate';
   private initialData!: MockData;
 

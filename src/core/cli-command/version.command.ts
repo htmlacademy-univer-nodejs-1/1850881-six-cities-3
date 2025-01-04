@@ -1,8 +1,8 @@
 import chalk from 'chalk';
 import pkg from '../../../package.json' assert {type: 'json'};
-import {CliCommand} from './cli-command.interface.js';
+import {CliCommandInterface} from './cli-command.interface.js';
 
-export default class VersionCommand implements CliCommand {
+export default class VersionCommand implements CliCommandInterface {
   public readonly name = '--version';
 
   private readVersion(): string {

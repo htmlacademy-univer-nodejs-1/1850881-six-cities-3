@@ -1,10 +1,10 @@
 import {Router, Response} from 'express';
-import {Route} from '../../types/route.interface.js';
+import {RouteInterface} from '../../types/route.interface.js';
 
-export interface Controller {
+export interface ControllerInterface {
   readonly router: Router;
 
-  addRoute(route: Route): void;
+  addRoute(route: RouteInterface): void;
 
   send<T>(res: Response, statusCode: number, data: T): void;
 

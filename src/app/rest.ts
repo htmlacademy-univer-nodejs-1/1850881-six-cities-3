@@ -1,6 +1,6 @@
 import {LoggerInterface} from '../core/logger/logger.interface.js';
 import cors from 'cors';
-import {Config} from '../core/config/config.interface.js';
+import {ConfigInterface} from '../core/config/config.interface.js';
 import {RestSchema} from '../core/config/rest.schema.js';
 import {inject, injectable} from 'inversify';
 import {AppComponent} from '../types/app-component.enum.js';
@@ -17,7 +17,7 @@ export default class Application {
   private server: Express;
 
   constructor(@inject(AppComponent.LoggerInterface) private readonly logger: LoggerInterface,
-              @inject(AppComponent.ConfigInterface) private readonly config: Config<RestSchema>,
+              @inject(AppComponent.ConfigInterface) private readonly config: ConfigInterface<RestSchema>,
               @inject(AppComponent.DatabaseClientInterface) private readonly databaseClient: DbClientInterface,
               @inject(AppComponent.HttpErrorExceptionFilter) private readonly httpErrorExceptionFilter: ExceptionFilterInterface,
               @inject(AppComponent.UserController) private readonly userController: BaseController,

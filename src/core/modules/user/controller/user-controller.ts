@@ -16,7 +16,7 @@ import {ObjectIdValidationMiddleware} from '../../../middlewares/object-id-valid
 import {LoginUserDto} from '../dto/login-user.dto.js';
 import LoggedUserRdo from '../rdo/logged-user.rdo.js';
 import {UnknownRecord} from '../../../../types/unknown-record.type.js';
-import {Config} from '../../../config/config.interface.js';
+import {ConfigInterface} from '../../../config/config.interface.js';
 import UploadAvatarResponse from '../rdo/upload-avatar-response.js';
 import {JWT_ALGORITHM} from '../../../helpers/constants.js';
 
@@ -25,7 +25,7 @@ export class UserController extends BaseController {
   constructor(
     @inject(AppComponent.LoggerInterface) protected readonly logger: LoggerInterface,
     @inject(AppComponent.UserServiceInterface) private readonly userService: UserService,
-    @inject(AppComponent.ConfigInterface) protected readonly configService: Config<RestSchema>
+    @inject(AppComponent.ConfigInterface) protected readonly configService: ConfigInterface<RestSchema>
   ) {
     super(logger, configService);
     this.logger.info('Register routes for UserController...');

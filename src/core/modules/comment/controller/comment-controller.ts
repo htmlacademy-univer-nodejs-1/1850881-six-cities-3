@@ -14,7 +14,7 @@ import CreateCommentDto from '../dto/create-comment.dto.js';
 import {DtoValidationMiddleware} from '../../../middlewares/dto-validation-middleware.js';
 import {PrivateRouteMiddleware} from '../../../middlewares/private-root-middleware.js';
 import {UnknownRecord} from '../../../../types/unknown-record.type.js';
-import {Config} from '../../../config/config.interface.js';
+import {ConfigInterface} from '../../../config/config.interface.js';
 import {RestSchema} from '../../../config/rest.schema.js';
 
 @injectable()
@@ -23,7 +23,7 @@ export default class CommentController extends BaseController {
     @inject(AppComponent.LoggerInterface) protected readonly logger: LoggerInterface,
     @inject(AppComponent.CommentServiceInterface) private readonly commentService: CommentService,
     @inject(AppComponent.OfferServiceInterface) private readonly offerService: OfferService,
-    @inject(AppComponent.ConfigInterface) configService: Config<RestSchema>,
+    @inject(AppComponent.ConfigInterface) configService: ConfigInterface<RestSchema>,
   ) {
     super(logger, configService);
 
