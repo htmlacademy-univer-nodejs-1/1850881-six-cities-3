@@ -1,7 +1,7 @@
-import {CliCommandInterface} from './cli-command.interface.js';
+import {CliCommand} from './cli-command.interface.js';
 import chalk from 'chalk';
 
-export default class HelperCommand implements CliCommandInterface {
+export default class HelperCommand implements CliCommand {
   public readonly name = '--help';
 
   public async execute(): Promise<void> {
@@ -11,7 +11,7 @@ export default class HelperCommand implements CliCommandInterface {
     chalk.bold('\tКоманды:\n'),
     chalk.yellow('\t--version:                   '), chalk.bgMagenta('# выводит номер версии\n'),
     chalk.green('\t--help:                      '), chalk.bgMagenta('# печатает этот текст\n'),
-    chalk.red('\t--import <path>:             '), chalk.bgMagenta('# импортирует данные из TSV\n'),
-    chalk.blue('\t--generate <n> <path> <url>  '), chalk.bgMagenta('# генерирует произвольное количество тестовых данных'));
+    chalk.red('\t--import <path d="">:             '), chalk.bgMagenta('# импортирует данные из TSV\n'),
+    chalk.blue('\t--generate <n> <path d=""> <url>  '), chalk.bgMagenta('# генерирует произвольное количество тестовых данных'));
   }
 }
